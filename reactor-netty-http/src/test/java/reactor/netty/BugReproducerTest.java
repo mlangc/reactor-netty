@@ -35,6 +35,10 @@ import static org.assertj.core.api.Fail.fail;
  * <p>
  * Older releases: the test compiles and passes on all of v1.3.0-M1 to v1.3.0-M7, v1.3.0-RC1,
  * v1.3.0 and v1.3.1 to v1.3.6.
+ * <p>
+ * Only the 1_000_000 byte cases fail (with "Read stalled"); the 100_000 byte cases pass everywhere and serve
+ * as controls. Still failing on upstream/1.3.x (0e3251b38) and upstream/main (eef0f4c61), which include
+ * the fix for #4347.
  */
 public class BugReproducerTest {
 	static final int DELAY_MS = 200;
