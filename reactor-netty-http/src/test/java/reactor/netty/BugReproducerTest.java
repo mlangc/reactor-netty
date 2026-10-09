@@ -119,9 +119,11 @@ public class BugReproducerTest {
 								.as("lines=%s", lines)
 								.isNotEmpty()
 								.last().satisfies(l -> assertThat(l).contains("200"));
-					} catch (TimeoutException e) {
+					}
+					catch (TimeoutException e) {
 						fail("Write stalled", e);
-					} catch (SocketTimeoutException e) {
+					}
+					catch (SocketTimeoutException e) {
 						fail("Read stalled", e);
 					}
 				}
